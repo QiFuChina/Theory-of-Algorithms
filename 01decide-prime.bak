@@ -1,0 +1,24 @@
+#lang racket
+
+;Question: Write, from scratch, a function in Racket that uses a brute-force algorithm that takes
+;a single positive integer and return true if the number is a prime and false otherwise
+
+;Reference from: https://stackoverflow.com/questions/3345626/finding-a-prime-number-in-scheme-using-natural-recursion
+
+;By typing (prime anynumber) on the below commandline in DrRacket and the result will be presented
+
+
+(define (prime p) ;Geting value from input command line 
+  (define (check n i) ;This define expression of n i are bind with p and p-1
+    (cond   
+     ((= i 1) #t) ;A if statement, if i = 1, the number is prime number
+     ((=(remainder n i) 0) ;if n/i = 0 return false and p is a prime number
+              #f ; i-- and continue loop             
+              (check n (- i 1))))
+    )
+
+  ;This part will be executed
+  (if (= p 1) ;if the inputed number is 1, it will return true 
+      #t
+      (check p (- p 1))) ;If not 1, p will - 1 and put values to function check on the top
+  )
