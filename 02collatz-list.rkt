@@ -4,7 +4,16 @@
 
 (define list '());Defining a empty list
 (define (collatz-list n)
-  (cond (= (remainder n 2) 1);Geting remainder and selecting one expression to continue
-    ((+ 1 (* n 3)) (collatz-list n));After Calauting expressiong, it will recall the function collatz-list
-    ((/ n 2)) (collatz-list n));After Calauting expressiong, it will recall the function collatz-list
+  (append list n);Append command makes two lists to combine as one list
+  (cond
+    ((= n 1) list '(1));One
+    ((= (remainder n 2) 1);Geting remainder and selecting one expression to continue
+     (cons n
+           (collatz-list(+ 1 (* n 3)))));After Calauting expressiong, it will recall the function collatz-list
+
+    ((= (remainder n 2 ) 0)
+      (cons n
+           (collatz-list(/ n 2)) )
+           )
+    );After Calauting expressiong, it will recall the function collatz-list
   )
