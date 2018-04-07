@@ -1,4 +1,5 @@
 #lang racket
+;Question: Write a function maj in Racket that takes three lists x, y and z of equal length and containing only 0’s and 1’s. It should return a list containing a 1 where two or more of x, y and z contain 1’s, and 0 otherwise.
 (define (maj list1 list2 list3)
     ;Checking three lists if one list is null then result will be '()
 

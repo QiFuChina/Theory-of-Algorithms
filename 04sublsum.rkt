@@ -1,6 +1,6 @@
 #lang racket
 
-
+;Question:Write a function sublsum in Racket that takes a list (of integers) as input and returns a list of sublists of it that sum to zero. For this problem, you can use the combinations built-in function. Note the order of the sublists and their elements doesn’t matter.
 ;Example reference:
 ;map,https://github.com/theory-of-algorithms/example-scheme/blob/master/mapreduce.rkt
 ;combinations, https://github.com/theory-of-algorithms/example-scheme/blob/master/permutations.rkt
@@ -9,7 +9,7 @@
 (define (sum l);Will be called in function sublsum
   (if (null? l)
 	0;If list l is null, get 0
-	(+ (car l) (sum (cdr l)))));Otherwise, cal l plus the sum of rest l 
+	(+ (car l) (sum (cdr l)))));Otherwise, cal l will plus the sum of rest l 
 
 (define (subsublsum l1 l2)
   (if (null? l1)
